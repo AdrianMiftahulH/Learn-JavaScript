@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const person = {
+            name: "Adriana",
+            sayHello: function (name) {
+                alert(`Hello ${name}`)
+            }
+        }
+
+        person.sayHello('Nino')
+
+        //this keyword
+        const useThis = {
+            name: "Adriana",
+            sayHello: function (name) {
+                document.writeln(`<p>Hello ${name}, My name is ${this.name}</p>`)
+            }
+        }
+
+        useThis.sayHello('Nino')
+
+        // Arrow Function di Object
+        const useThisWithArrow = {
+            name: "Arfan",
+            sayHello: (name) => {
+                document.writeln(`<p>Hello ${name}, My name is ${this.name}</p>`) //this tidak akan berfungsi di func arrow
+            }
+        }
+
+        useThisWithArrow.sayHello('Azwar')
+    </script>
+</body>
+
+</html>

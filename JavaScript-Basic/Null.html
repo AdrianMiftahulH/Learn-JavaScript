@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hull</title>
+</head>
+
+<body>
+    <script>
+        let fullname = null;
+
+        if (fullname === null) {
+            document.writeln("This is value Null");
+        } else if (fullname === undefined) {
+            document.writeln("This is value Undefined");
+        } else {
+            document.writeln(`${fullname}`);
+        }
+
+        // nullish coalescing Operator
+        // valiabe = codition value not null/undefined ?? condition value null/undifined 
+        let data = fullname ?? "This is value null with nullish";
+        document.writeln(`<h1>${data}</h1>`);
+    </script>
+</body>
+
+</html>

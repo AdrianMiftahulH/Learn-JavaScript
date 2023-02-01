@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Boolean</title>
+</head>
+
+<body>
+    <script>
+        document.writeln(true);
+        document.writeln(false);
+
+        // Operator non Boolean
+        console.info("Hello" || ""); //Hello
+        console.info("" || []); //[]
+        console.info("0" || "Nol"); //0
+        console.info(0 || "Nol"); //Nol
+        console.info(null || "Null"); //"Null"
+        console.info(undefined || "Undefined"); //"Undefined"
+        console.info(0 || false); //false
+
+        console.info("Hello" && ""); //""
+        console.info("" && []); //""
+        console.info("0" && "Nol"); //"Nol"
+        console.info(0 && "Nol"); //0
+        console.info(null && "Null"); //null
+        console.info(undefined && "Undefined"); //undefined
+        console.info(0 && false); //0
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Function</title>
+</head>
+
+<body>
+    <script>
+        // create function
+        function thisFunc() {
+            document.writeln("<p>Hello World</p>");
+        }
+
+        // create function with parameter/argument
+        function withParams(firstName, lastName) {
+            document.writeln(`<p>${firstName} ${lastName}</p>`)
+        }
+
+        // create function return value
+        function returnValue(firstName, lastName) {
+            const name = `<p>${firstName} ${lastName}</p>`;
+            return name;
+        }
+
+        // create function default value
+        function defaultParams(firstName = "Dinda", lastName = 'Mahardika') {
+            document.writeln(`<p>${firstName} ${lastName}</p>`);
+        }
+
+        // Create rest parameter, Rest parameter adalah fitur dimana kita bisa mengrim data sebanyak-banyaknya pada satu parameter, dan secara otomatis akan di konvert ke array
+        // function nameFunc(paramter1,parameter2, ...restParameter){}
+
+        function restParams(name, ...data) {
+            let total = 0;
+
+            for (let item of data) {
+                total += item;
+            }
+            document.writeln(`Total ${name} is ${total}`);
+        }
+
+        // create Funtion as variabel
+        function asVariabel(name) {
+            document.writeln(`<p>${name}</p>`);
+        }
+
+        // create anonymous function
+        let anonyFunc = function (name) {
+            document.writeln(`<p>${name}</p>`);
+        }
+
+        //create inner Function
+        function outerFunc() {
+            function inner() {
+                document.writeln(`<p>inner</p>`);
+            }
+
+            inner();
+        }
+
+        // create Recursive Function
+        function recursiveFunc(value) {
+            if (value === 1) {
+                return 1;
+            } else {
+                return value * recursiveFunc(value - 1);
+            }
+        }
+
+        // create Function Generator, adalah function yangdigunakan untuk membuat data generator
+        // data bis adi interasi seperti array
+        // menambhakan * setelah kata function, lalu di ikutikey yield untuk menjadi datanya
+
+        function* generFunc() {
+            yield "Adrian";
+            yield "Miftahul";
+            yield "Haq";
+        }
+
+        // Arrow Function
+        const arrowFunc = (name) => {
+            const say = `Hello ${name}`;
+            console.info(say);
+        }
+
+        // get function
+        thisFunc();
+
+        withParams("Adrian", "Miftahul Haq");
+
+        const result = returnValue("Nina", "Bobo");
+        document.writeln(`<p>${result}</p>`)
+
+        defaultParams();
+
+        restParams("Adrian", 12, 32, 123, 123);
+        restParams("Adrian", ...[12, 32, 123, 123]); //with array
+
+        const thisAsVariabel = asVariabel;
+        thisAsVariabel("Adriana")
+
+        anonyFunc("Tiara");
+
+        outerFunc();
+        // innerFunc(); //error, karena hanya bisa di dalam function tersebut
+
+        document.write(recursiveFunc(5));
+
+        const gener = generFunc();
+
+        arrowFunc("AdrianArrowFunction")
+    </script>
+</body>
+
+</html>

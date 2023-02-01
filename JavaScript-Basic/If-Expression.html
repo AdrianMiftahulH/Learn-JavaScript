@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn If expression</title>
+</head>
+
+<body>
+    <script>
+        const examValue = 91;
+
+        if (examValue >= 90) {
+            document.writeln(`<h1>Perfect : ${examValue}</h1>`);
+        } else if (examValue >= 80 && examValue < 90) {
+            document.writeln(`<h1>Good Job : ${examValue}</h1>`);
+        } else if (examValue >= 70 && examValue < 80) {
+            document.writeln(`<h1>Not Bad  ${examValue}</h1>`);
+        } else {
+            document.writeln(`<h1>Try again Next Week</h1>`)
+        }
+
+        // How to use Ternary Operator
+        // variabel = condition ? condition true : condition false
+        let ucapan = examValue >= 80 ? "Good Job Boy" : "Next Try";
+        document.writeln(`<h1>Good Job : ${ucapan}</h1>`);
+
+    </script>
+</body>
+
+</html>

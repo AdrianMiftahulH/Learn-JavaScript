@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Operator</title>
+</head>
+
+<body>
+    <script>
+        let num1 = 400;
+        let num2 = 300;
+        let num3 = "300";
+        // Operator Aritmatika
+
+        // Addication
+        let addication = num1 + num2
+        document.writeln(addication);
+        // Subtraction
+        let subtraction = num1 - num2
+        document.writeln(subtraction);
+        // Multiplication
+        let multiplication = num1 * num2
+        document.writeln(multiplication);
+        // Exponentiation (ES2016)
+        let exponentiation = num1 ** num2
+        document.writeln(exponentiation);
+        // Division
+        let division = num1 / num2
+        document.writeln(division);
+        // Modulus (Division Remainder)
+        let modulus = num1 % num2
+        document.writeln(modulus);
+        document.writeln("<br>");
+
+        // Operator Perbandingan / Comparison Operators
+        // equal to
+        let equalTo = num2 == num3;
+        document.writeln(equalTo); // true
+        // equal value and equal type
+        let equalValue = num2 === num3;
+        document.writeln(equalValue); //false
+        // not equal
+        let notEqual = num2 != num3;
+        document.writeln(notEqual); //false
+        // not equal value or not equal type
+        let notEqualValue = num2 !== num3;
+        document.writeln(notEqualValue); //true
+        // greater than
+        let greaterThan = num1 > num2;
+        document.writeln(greaterThan); //true
+        // less than
+        let lessThan = num1 < num2;
+        document.writeln(lessThan); //false
+        // greater than or equal to
+        let greaterThanOrEqualTo = num1 >= num2;
+        document.writeln(greaterThanOrEqualTo); //true
+        // less than or equal to
+        let lessThanOrEqualTo = num1 <= num2;
+        document.writeln(lessThanOrEqualTo); //false
+    </script>
+</body>
+
+</html>

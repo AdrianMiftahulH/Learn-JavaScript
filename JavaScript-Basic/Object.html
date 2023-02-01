@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Object</title>
+</head>
+
+<body>
+    <script>
+
+        // create a object
+        let thisObject = {
+            "name": "adriana",
+            age: 19
+        };
+
+        // Addication / Menambahkan Object
+        thisObject["name"] = "Adrian";
+        thisObject["address"] = "Jl.sini";
+        thisObject["city"] = "Situ";
+
+        //delete object
+        delete thisObject["city"];
+
+        console.table(thisObject);
+        console.info(`Name: ${thisObject.name}`);
+
+        // In Oparator , mengecek sebuah property di object (bukan value) apakah ada atau tidak
+
+        if ("name" in thisObject) { // true
+            alert(`Hello ${thisObject.name}`)
+        } else {
+            alert('Property not Found');
+        }
+
+        // Optional Chaining, ppengecekan pada sebuah propery, apakah property tersebut undigined/null atau tidak
+        const person = {
+            address: {
+                country: "Indonesia"
+            }
+        };
+
+        // var = varObject?.property1?.property2
+        let country = person?.address?.country;
+
+        document.writeln(`<h1>${country}</h1>`);
+
+        // with statment, Tidak di rekomendasikan
+        const thisWith = {
+            firstName: "Adrian",
+            middleName: "Miftahul",
+            lastName: "Haq",
+        }
+
+        with (thisWith) { //Berguna agar tidak perlu lagi memanggil nama object sama lagi
+            console.info(firstName);
+            console.info(middleName);
+            console.info(lastName);
+        }
+    </script>
+</body>
+
+</html>

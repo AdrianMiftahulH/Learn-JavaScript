@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Scope</title>
+</head>
+
+<body>
+    <script>
+        // Global Scope
+        let counter = 0;
+
+        function hitMe() {
+            //local scope hitMe
+            counter++;
+        }
+
+        function other() {
+            //local scope other
+        }
+
+        hitMe();
+        hitMe();
+
+        document.writeln(counter);
+
+        // Local Scope / hanya bisa memanggil variabel di dalam function tersebut
+
+        function first() {
+            //local scope
+            let firstVar = "First";
+            document.writeln(firstVar);
+        }
+        function second() {
+            //local scope
+            let secondVar = "Second";
+            document.writeln(firstVar);
+        }
+
+        first();
+
+        // Nested Function Scope
+        function Parentfirst() {
+            //local scope
+            let firstVar = "First";
+
+            function nestedFirst() {
+                document.writeln(firstVar);
+            }
+
+            nestedFirst()
+        }
+
+        Parentfirst();
+
+    </script>
+</body>
+
+</html>

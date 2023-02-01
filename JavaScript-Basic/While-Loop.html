@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While Loop</title>
+</head>
+
+<body>
+    <script>
+        let varLoop = 1;
+        while (varLoop <= 7) {
+            document.writeln(`${varLoop}`);
+            varLoop++;
+        }
+
+        // continue and Break
+        let thisBreak = 1
+        while (true) {
+            document.writeln(`<p>${thisBreak}</p>`);
+            thisBreak++;
+
+            if (thisBreak > 5) {
+                break;
+            }
+        }
+
+        let thisContinue = 0;
+        while (thisContinue <= 10) {
+            thisContinue++;
+            if (thisContinue % 2 === 0) {
+                continue; // menghentikan eksekusi saat ini, lalu lanjutkan lagi loopny 
+            }
+            document.writeln(`${thisContinue}`);
+        }
+    </script>
+</body>
+
+</html>

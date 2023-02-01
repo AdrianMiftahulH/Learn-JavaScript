@@ -1,0 +1,11 @@
+### Number 
+
+Number Notation
+
+Hexadecimal : 0xFF
+Binary : 0b10101
+Octal : 0o10
+
+### Variabel 
+Var sudah tidak di rekomendasi bisa ganti dengan let atau const
+perbedaan const dan let yaitu bila const tidak bisa diganti value nya;
