@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Field</title>
+</head>
+
+<body>
+    <script>
+        // Public Class Field
+        class thisPublicField {
+            // Create field class
+            firstName;
+            lastName;
+            balance = 0;
+
+            constructor(firstName, lastName) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+            }
+        }
+
+        const publicClass = new thisPublicField("Eko", "Kurniawan");
+        console.log(publicClass);
+
+        // Private Class Field, can only be accessed in the class only
+
+        class thisPrivateField {
+            //Create field class
+            #counter = 0; //To create a private class must add #
+
+            // method
+            increment() {
+                this.#counter++;
+            }
+
+            decrement() {
+                this.#counter--;
+            }
+
+            get() {
+                return this.#counter;
+            }
+        }
+
+        const counter = new thisPrivateField();
+
+        counter.increment();
+        counter.increment();
+        counter.increment();
+        counter.increment();
+        counter.increment();
+
+        // counter.counter = 100; ==> error
+
+        console.log(counter.get());
+
+        // Private Method
+        class thisPrivateMethod {
+            say(name) {
+                if (name) {
+                    this.#sayWithName(name);
+                } else {
+                    this.#sayWithoutName();
+                }
+            }
+
+            #sayWithoutName() {
+                console.log("Hello");
+            }
+
+            #sayWithName(name) {
+                console.log(`Hello ${name}`);
+            }
+        }
+
+        const adrian = new thisPrivateMethod();
+        adrian.say("Adrian");
+
+        //Static Class Field, jadi field nya milik class, bukan lagi miliki object
+        class ThisStaticField {
+            static nameTitle = "Learn OOP";
+            static version = 1.0;
+            static author = "Adrian Miftahul Haq";
+        }
+
+        console.info(ThisStaticField.nameTitle);
+        console.info(ThisStaticField.version);
+        console.info(ThisStaticField.author);
+    </script>
+</body>
+
+</html>

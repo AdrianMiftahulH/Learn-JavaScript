@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Super</title>
+</head>
+
+<body>
+    <script>
+        class Employee {
+            constructor(firstName) {
+                this.firstName = firstName
+            }
+            sayHello(name) {
+                console.info(`Hello ${name}, my name is Employee ${this.firstName}`);
+            }
+        }
+        class Manager extends Employee {
+            // super berfungsi untuk membuat construct di class child
+            constructor(firstName, lastName) {
+                super(firstName);
+                this.lastName = lastName;
+            }
+
+            sayHello(name) {
+                console.info(`Hello ${name}, my name is Manager ${this.firstName} ${this.lastName}`);
+            }
+        }
+
+        const faiza = new Employee()
+        faiza.firstName = "Faiza";
+        faiza.sayHello("Saskia")
+        console.log(faiza);
+        const Dinda = new Manager("Dinda", "Nugraha")
+        Dinda.sayHello("Saskia", "Nov")
+    </script>
+</body>
+
+</html>

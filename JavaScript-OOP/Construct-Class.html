@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construct Class</title>
+</head>
+
+<body>
+    <script>
+        class Person {
+            constructor(name) {
+                // Property in class
+                this.name = name;
+            }
+
+            // create a Method
+            sayHello(name) {
+                console.info(`Hello ${name}, my name ${this.name}`);
+
+            }
+        }
+
+        const adrian = new Person(`Adrian`);
+        console.log(adrian);
+        adrian.sayHello("Faiza")
+    </script>
+</body>
+
+</html>

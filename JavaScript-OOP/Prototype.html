@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+</head>
+
+<body>
+    <script>
+        function Person(firstName, lastName) {
+            // How to create property
+            this.firstName = firstName;
+            this.lastName = lastName;
+
+            // How to Create Method
+            this.sayHello = function (name) {
+                console.info(`Hello ${name}, my name ${this.firstName}`);
+            }
+        }
+
+        // How to create prototype to all variabel
+        Person.prototype.sayRun = function () {
+            console.info(`${this.firstName} is running`);
+        }
+
+        // Memanggil Class / Construct Func
+        const adrian = new Person("Adriana", "Monica"); //how to calling construct function
+        adrian.sayBye = function () { //How to create prototype to just one variebel
+            console.info(`Good Bye`);
+        }
+
+        const saskia = new Person("Sakia", "Nov"); //how to calling construct function
+
+        // Memanggil method
+        console.info(adrian)
+        console.info(saskia)
+
+        // Calling prototype
+        adrian.sayRun()
+
+    </script>
+</body>
+
+</html>

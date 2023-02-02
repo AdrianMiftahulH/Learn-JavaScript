@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construct Inheritance</title>
+</head>
+
+<body>
+    <script>
+        // construct inheriteance adalah construct func yang dapat memanggil/menggunakan construct func lain
+        function Employee(firstName) {
+            this.firstName = firstName;
+            this.sayHello = function (name) {
+                console.info(`Hello ${name}, my name ${this.firstName}`);
+            }
+        }
+
+        function Manager(firstName, lastName) {
+            this.lastName = lastName;
+            Employee.call(this, firstName); // cara menggunakan construct inheritance , dengan namaFun call(dimanaObejct, parameter)
+        }
+
+        const Della = new Manager("Della", "Nuramalia");
+        console.info(Della);
+    </script>
+</body>
+
+</html>

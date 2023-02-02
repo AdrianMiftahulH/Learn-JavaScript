@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype Inheritance</title>
+</head>
+
+<body>
+    <script>
+        /**
+         * 
+         * INI SALAH
+         * 
+        function Employee(name) {
+            this.name = name;
+        }
+        function Manager(name) {
+            this.name = name;
+        }
+
+        Manager.prototype = Employee.prototype; // kerana bukan jadi pewarisan, tapi malah nge replace prototype Manager menjadi prototype Employee
+
+        Manager.prototype.sayHello = function (name) {
+            console.info(`Hello ${name}, my name is Manager ${this.name}`)
+        }
+
+        Employee.prototype.sayHello = function (name) {
+            console.info(`Hello ${name}, my name is Employee ${this.name}`)
+        } 
+        **/
+
+        function Employee(name) {
+            this.name = name;
+        }
+        function Manager(name) {
+            this.name = name;
+        }
+
+        Manager.prototype = Object.create(Employee.prototype); // kerana bukan jadi pewarisan, tapi malah nge replace prototype Manager menjadi prototype Employee
+
+        Manager.prototype.sayHello = function (name) {
+            console.info(`Hello ${name}, my name is Manager ${this.name}`)
+        }
+
+        Employee.prototype.sayHello = function (name) {
+            console.info(`Hello ${name}, my name is Employee ${this.name}`)
+        }
+
+        const employee = new Employee("Asuna")
+        employee.sayHello("Nino")
+
+        const manager = new Manager("Dilla")
+        manager.sayHello("Monica")
+    </script>
+</body>
+
+</html>

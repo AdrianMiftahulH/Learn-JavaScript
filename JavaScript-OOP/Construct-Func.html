@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construct Function</title>
+</head>
+
+<body>
+    <script>
+        function Person(firstName, lastName) { //Untuk memmbuat construct func, diawal nama func harus huruf besar
+
+            // How to create property
+            this.firstName = firstName;
+            this.lastName = lastName;
+
+            // How to Create Method
+            this.sayHello = function (name) {
+                console.info(`Hello ${name}, my name ${this.firstName}`);
+            }
+        }
+
+        //Memanggil Class / Construct Func
+        const adrian = new Person("Adriana", "Monica"); //cara untuk memanggil construct function
+        console.log(adrian);
+
+        //Memanggil method
+        adrian.sayHello("Tiara");
+
+    </script>
+</body>
+
+</html>
