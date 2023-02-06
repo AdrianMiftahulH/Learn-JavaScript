@@ -82,3 +82,24 @@ const listLight = document.querySelectorAll('li:nth-child(odd'); //get all query
 listLight.forEach(function (li, index) {
     li.style.background = '#ccc';
 })
+
+// ## create new element ##
+const li = document.createElement('li');
+
+// ### add class ###
+li.className = 'list-group-item d-flex flex-row-reverse justify-content-between';
+
+// ### add id ###
+li.id = 'new-item'
+
+// ### add attribute ###
+li.setAttribute('title', 'new item')
+
+// ### add innerHTML ###
+li.innerHTML = '<a href="/" class="btn btn-danger btn-sm delete-item">x</a>';
+
+// Create append text node
+li.appendChild(document.createTextNode("This New Text"))
+
+// execution new element
+document.querySelector('ul.list-group').appendChild(li);
