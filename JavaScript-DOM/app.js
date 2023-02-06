@@ -46,9 +46,9 @@ scriptArr.forEach(function (script) {
 
 // ## get Element By Id
 
-console.log(document.getElementById('task-title')); //get element
-console.log(document.getElementById('task-title').id); //get attribute id in element
-console.log(document.getElementById('task-title').className); //get attribute class in element
+// console.log(document.getElementById('task-title')); //get element
+// console.log(document.getElementById('task-title').id); //get attribute id in element
+// console.log(document.getElementById('task-title').className); //get attribute class in element
 
 const cardHeader = document.getElementById('task-title');
 // ### Change style by id ###
@@ -60,7 +60,7 @@ cardHeader.textContent = 'Hello World'; //change Content by id
 cardHeader.innerHTML = '<h2 style="text-align:center;">My Task</h2>'
 
 // ## get Query Select, just take the first query ## 
-console.log(document.querySelector('#task-title')); //get element
+// console.log(document.querySelector('#task-title')); //get element
 
 // ### Change style by Query ###
 document.querySelector('li').style.color = 'red'; //take the first query;
@@ -74,7 +74,6 @@ items[2].style.color = "blue"
 // ## get Element By Tag Name ##
 const buttom = document.getElementsByTagName('button');
 buttom[1].style.color = "Blue"
-console.log(buttom);
 
 // ## get query selector all ##
 const listLight = document.querySelectorAll('li:nth-child(odd'); //get all query odd
@@ -86,22 +85,22 @@ listLight.forEach(function (li, index) {
 // ## create new element ##
 const li = document.createElement('li');
 
-// ### add class ###
+// add class
 li.className = 'list-group-item d-flex flex-row-reverse justify-content-between';
 
-// ### add id ###
+// add id
 li.id = 'new-item'
 
-// ### add attribute ###
+// add attribute
 li.setAttribute('title', 'new item')
 
-// ### add innerHTML ###
+// add innerHTML
 li.innerHTML = '<a href="/" class="btn btn-danger btn-sm delete-item">x</a>';
 
-// ### Create append text node ### 
+// Create append text node 
 li.appendChild(document.createTextNode("This New Text"))
 
-// ### execution new element ###
+// execution new element
 document.querySelector('ul.list-group').appendChild(li);
 
 // ## Replace Element ## 
@@ -116,9 +115,40 @@ newHeading.id = 'task-title';
 newHeading.appendChild(document.createTextNode('Task List'));
 
 // get old element
-const oldHeading = document.getElementById('card-title');
+const oldHeading = document.getElementById('card-title'); 
 // get parent
-const cardHeader = document.querySelector('.card-header');
+const cardTitle = document.querySelector('.card-header');
 
 // Replace
-cardHeader.replaceChild(newHeading, oldHeading);
+// cardTitle.replaceChild(newHeading, oldHeading);
+
+// ## Remove Element ##
+const lis = document.querySelectorAll('li');
+const list = document.querySelector('ul');
+
+// Remove list item
+lis[0].remove();
+
+// ## Class And Attribute
+
+// Class
+const firstLi = document.querySelector('li:first-child')
+const button = firstLi.children[0];
+
+let addClass;
+
+addClass = button.className
+addClass = button.classList
+
+button.classList.add("test");
+button.classList.remove("test");
+addClass = button;
+
+// Attribute
+
+addAtt = button.setAttribute("type", 'submit')
+addAtt = button.hasAttribute('type')
+addAtt = button;
+
+
+// # Event #
