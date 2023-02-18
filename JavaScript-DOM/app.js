@@ -132,23 +132,60 @@ lis[0].remove();
 // ## Class And Attribute
 
 // Class
-const firstLi = document.querySelector('li:first-child')
-const button = firstLi.children[0];
+// const firstLi = document.querySelector('li:first-child')
+// const button = firstLi.children[0];
 
-let addClass;
+// let addClass;
 
-addClass = button.className
-addClass = button.classList
+// addClass = button.className
+// addClass = button.classList
 
-button.classList.add("test");
-button.classList.remove("test");
-addClass = button;
+// button.classList.add("test");
+// button.classList.remove("test");
+// addClass = button;
 
-// Attribute
+// // Attribute
 
-addAtt = button.setAttribute("type", 'submit')
-addAtt = button.hasAttribute('type')
-addAtt = button;
+// addAtt = button.setAttribute("type", 'submit')
+// addAtt = button.hasAttribute('type')
+// addAtt = button;
 
 
 // # Event #
+// Event Listener
+
+// click
+document.querySelector('.clear-task').addEventListener('click', onClick);
+
+// double click
+// document.querySelector('.clear-task').addEventListener('dblclick', onClick);
+
+// Mouse Down
+// document.querySelector('.clear-task').addEventListener('mousedown', onClick);
+
+// Mouse Up
+// document.querySelector('.clear-task').addEventListener('mouseup', onClick);
+
+// Mouse Enter
+// document.querySelector('.clear-task').addEventListener('mouseenter', onClick);
+
+
+function onClick(e) {
+    console.log(`Event type : ${e.type}`);
+    // Untuk berguna untuk mencegah untuk mengarahkan ke link a href
+    e.preventDefault();
+
+    e.target.innerText = "Clear Success";
+}
+
+// Form and input
+const form = document.querySelector('form');
+const taskInput = document.getElementById("input-task");
+
+form.addEventListener('submit', runEvent);
+
+function runEvent(e){
+    console.log(e.target.value);
+    // taskInput.value = '';
+    preventDefault(e);
+}
